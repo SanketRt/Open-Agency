@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nightshade — If you scrape me, you poison your model · Open Agency</title>
+  <meta name="description" content="Nightshade is a prompt-specific poisoning attack that lets artists push back against unconsented scraping." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23B4432E'/%3E%3C/svg%3E" />
+</head>
+<body class="tool-page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="logo">Open Agency</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#problem">The Problem</a>
+        <a href="../index.html#india">India</a>
+        <a href="../index.html#toolbox">Toolbox</a>
+        <a href="../index.html#voices">What People Think</a>
+        <a href="../index.html#contribute" class="btn">Contribute</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a>
+
+        <div class="tool-hero-grid">
+          <div class="tool-hero">
+            <p class="section-label">Tool · 03 of 03</p>
+            <h1>Nightshade</h1>
+            <p class="tagline">If you scrape me, you poison your model.</p>
+            <p class="sub">
+              Nightshade — from the same University of Chicago lab as Glaze — goes on
+              offence. It modifies an image so that, to a human, it still looks like (say)
+              a dog. But to a model being trained on it, it teaches the model that
+              <em>dog</em> means <em>cat</em>.
+            </p>
+          </div>
+
+          <dl class="meta">
+            <dt>Who it's for</dt>
+            <dd>Artists willing to escalate — to make unconsented scraping expensive, not just unrewarding.</dd>
+            <dt>Stance</dt>
+            <dd>Offensive / technical.</dd>
+            <dt>Cost</dt>
+            <dd>Free.</dd>
+            <dt>Requires cooperation?</dt>
+            <dd>No.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-block: 3rem 4rem;">
+      <div class="wrap">
+
+        <h2>How it works, in plain English</h2>
+        <div class="prose">
+          <p>
+            Diffusion models are surprisingly fragile at the concept level. A small number
+            of carefully-crafted images, seeded into a training set, can shift what the
+            model <em>thinks</em> a concept means. The Nightshade paper reports noticeable
+            impact with as few as 50–100 poisoned samples per concept, and over 84% attack
+            success with around 200.
+          </p>
+          <p>
+            The image you release still looks, to human eyes, like whatever it always was —
+            a dog, a hat, a painting of a meadow. But its latent representation has been
+            steered so that the model, during training, updates in the wrong direction. After
+            enough poisoned samples, prompts containing the targeted concept start returning
+            incoherent or simply wrong images.
+          </p>
+        </div>
+
+        <div class="pros-cons">
+          <section class="pros">
+            <h4>What it does for you</h4>
+            <ul>
+              <li>Raises the cost of scraping unconsented data. If a company can't trust its training set, it has to filter carefully (expensive) or license data honestly (the point).</li>
+              <li>Survives real defences: high-loss filtering, frequency analysis, and basic poison-detection methods all fail to remove Nightshade samples reliably.</li>
+              <li>Transfers across models — poisoned samples generated against one feature extractor still degrade others.</li>
+              <li>Free and open — same SAND Lab infrastructure as Glaze.</li>
+            </ul>
+          </section>
+          <section class="cons">
+            <h4>What it doesn't do</h4>
+            <ul>
+              <li>It won't take down a production model. It's a statistical nudge that gets stronger as more people use it.</li>
+              <li>It's ethically contested — see the callout below.</li>
+              <li>It requires commitment: a single artist glazing and nightshading changes little. Collective adoption is where the leverage lives.</li>
+              <li>Once a concept has enough clean training data, poisoning it gets harder. Nightshade works best for an artist's own name and rare stylistic concepts.</li>
+            </ul>
+          </section>
+        </div>
+
+        <h2>The concept-sparsity insight</h2>
+        <div class="prose">
+          <p>
+            The Nightshade paper makes a quiet but important point: rare concepts are
+            easier to poison than common ones. "Dog" has millions of training images and is
+            hard to meaningfully shift. "Greg Rutkowski" — a specific artist's name — has a
+            few hundred, and can be effectively corrupted with fewer than 100 poison samples.
+            This means the tool's leverage falls exactly where the harm falls hardest: on
+            specific artists whose names and styles become prompts.
+          </p>
+        </div>
+
+        <div class="callout">
+          <strong>Ethics — read this section carefully</strong>
+          Nightshade is the most contested tool on this site. Some call it vandalism of
+          someone else's model. The authors frame it as asymmetric leverage for creators
+          who have no other leverage — a civil-disobedience tool against scraping that
+          already violates consent. You can hold either view. What you shouldn't do is
+          reach for it without knowing which you hold.
+        </div>
+
+        <h2 id="how" style="margin-top:3rem;">How to use it today</h2>
+        <div class="prose">
+          <ol>
+            <li>
+              Download Nightshade from the <a href="https://nightshade.cs.uchicago.edu" rel="noopener">SAND Lab</a>.
+              The tool is separate from Glaze but shares infrastructure. A reasonably modern
+              GPU speeds things up substantially.
+            </li>
+            <li>Open the app, add your image, and name the concept you want to poison (usually your own name, or a style you are known for).</li>
+            <li>Choose a perturbation budget. The paper's defaults (LPIPS p = 0.07) balance stealth with effectiveness.</li>
+            <li>Export. Upload to public platforms where scrapers will find it. You can — and the authors recommend you do — combine Glaze and Nightshade on the same image.</li>
+          </ol>
+        </div>
+
+        <h2>Honest framing</h2>
+        <div class="prose">
+          <p>
+            Nightshade does not fix the system. It does not hold companies accountable. It
+            does not restore consent retroactively. What it does is invert the usual
+            asymmetry: scraping is no longer free. For individual artists facing a system
+            they cannot sue their way out of, that shift in incentive is, for now, one of
+            the few forms of leverage available.
+          </p>
+          <p>
+            If the law catches up — if there is a clear, enforceable right to opt out of
+            AI training in India and elsewhere — the case for Nightshade weakens. That would
+            be a good thing. In the meantime, the case for informed use remains.
+          </p>
+        </div>
+
+        <h2>Further reading</h2>
+        <div class="prose">
+          <ul>
+            <li>Shan, S. et al. <em>Nightshade: Prompt-Specific Poisoning Attacks on Text-to-Image Generative Models</em>. IEEE S&P, 2024.</li>
+            <li>SAND Lab, University of Chicago — <a href="https://sandlab.cs.uchicago.edu" rel="noopener">sandlab.cs.uchicago.edu</a></li>
+            <li>Nightshade download — <a href="https://nightshade.cs.uchicago.edu" rel="noopener">nightshade.cs.uchicago.edu</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:3rem;"><a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <span>Open Agency · a project for Responsible AI</span>
+        <span><a href="../index.html">Home</a> · <a href="c2pa.html">C2PA</a> · <a href="glaze.html">Glaze</a></span>
+      </div>
+      <div>
+        <span>Content CC-BY-SA 4.0 · Code MIT</span>
+        <a href="#">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

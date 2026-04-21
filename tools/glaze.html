@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glaze — A cloak for your art style · Open Agency</title>
+  <meta name="description" content="Glaze is a tool from the SAND Lab at the University of Chicago that protects artists from style mimicry by text-to-image models." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23B4432E'/%3E%3C/svg%3E" />
+</head>
+<body class="tool-page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="logo">Open Agency</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#problem">The Problem</a>
+        <a href="../index.html#india">India</a>
+        <a href="../index.html#toolbox">Toolbox</a>
+        <a href="../index.html#voices">What People Think</a>
+        <a href="../index.html#contribute" class="btn">Contribute</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a>
+
+        <div class="tool-hero-grid">
+          <div class="tool-hero">
+            <p class="section-label">Tool · 02 of 03</p>
+            <h1>Glaze</h1>
+            <p class="tagline">A cloak for your art style.</p>
+            <p class="sub">
+              Glaze is a tool from the University of Chicago's SAND Lab that adds nearly
+              invisible perturbations to an artwork. To you, the image looks essentially the
+              same. To a diffusion model trying to learn your style, it looks like something
+              completely different — say, cubism or abstract expressionism.
+            </p>
+          </div>
+
+          <dl class="meta">
+            <dt>Who it's for</dt>
+            <dd>Visual artists, illustrators, photographers with a recognisable style.</dd>
+            <dt>Stance</dt>
+            <dd>Defensive / technical.</dd>
+            <dt>Cost</dt>
+            <dd>Free.</dd>
+            <dt>Requires cooperation?</dt>
+            <dd>No.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-block: 3rem 4rem;">
+      <div class="wrap">
+
+        <h2>How it works, in plain English</h2>
+        <div class="prose">
+          <p>
+            When a diffusion model learns your style, it is learning a set of statistical
+            patterns in <em>feature space</em> — the colours you favour, the ways your brush
+            moves, how you build shadow. Glaze does not try to fight this directly. It
+            computes a tiny perturbation on top of your image that, to the model's feature
+            extractor, shifts your work into the neighbourhood of a completely different
+            style — Van Gogh, Picasso, Norman Bluhm. The human eye barely notices. The model
+            learns the wrong lesson.
+          </p>
+          <p>
+            When someone later fine-tunes a model on a portfolio of glazed work, the model
+            produces art in the <em>target</em> style, not yours. The artist survives.
+          </p>
+        </div>
+
+        <div class="pros-cons">
+          <section class="pros">
+            <h4>What it does for you</h4>
+            <ul>
+              <li>In the authors' study, over <strong>93%</strong> of 1,156 surveyed artists rated Glaze as successful at disrupting style mimicry.</li>
+              <li>Around <strong>87%</strong> protection still holds when only 25% of an artist's portfolio is glazed — you don't have to re-cloak your entire back catalogue.</li>
+              <li>Robust to basic counter-attacks: JPEG compression, Gaussian denoising, upscaling — Glaze still holds above 85% protection.</li>
+              <li>Free and open — download, install, run locally. Your art never leaves your machine during cloaking.</li>
+            </ul>
+          </section>
+          <section class="cons">
+            <h4>What it doesn't do</h4>
+            <ul>
+              <li>It won't help if a model has already trained on your un-glazed work. Glaze is forward-looking.</li>
+              <li>It's a protection, not a weapon. For active pushback, see <a href="nightshade.html">Nightshade</a>.</li>
+              <li>The perturbation is small but not zero. In the author study, ~92% of artists said it wasn't disruptive to their art's value; ~8% disagreed.</li>
+              <li>Arms-race risk: later counter-techniques (PEZ, AdverseCleaner) have been evaluated; Glaze has held up so far, but nothing is permanent.</li>
+            </ul>
+          </section>
+        </div>
+
+        <h2 id="how" style="margin-top:3rem;">How to use it today</h2>
+        <div class="prose">
+          <ol>
+            <li>
+              Download Glaze from the <a href="https://glaze.cs.uchicago.edu" rel="noopener">SAND Lab at the University of Chicago</a>.
+              Windows and macOS builds are available; a GPU helps but isn't strictly required.
+            </li>
+            <li>Open the app and drag in your artwork.</li>
+            <li>Choose a <em>perturbation budget</em>. The authors suggest starting at p=0.05 (subtle) and only raising to p=0.1 if you want stronger protection at the cost of visible grain.</li>
+            <li>Run the cloak. Export the glazed version. Upload <em>that</em> — not the original — to ArtStation, Instagram, your portfolio site.</li>
+            <li>Keep the un-glazed master offline. If you need to print or license, use the clean version.</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <strong>Style-space intuition</strong>
+          A model doesn't see "your style" — it sees a point in a high-dimensional feature
+          space. Glaze nudges that point, invisibly to you, into a different neighbourhood.
+          When the model later looks for your style, it finds Van Gogh's.
+        </div>
+
+        <h2>The arms race, honestly</h2>
+        <div class="prose">
+          <p>
+            Any adversarial technique faces an arms race. Three counter-attacks have been
+            published against Glaze: adding Gaussian noise, JPEG-compressing the image, and
+            attempting to invert the cloak with learned methods like PEZ and AdverseCleaner.
+            The SAND Lab's papers report that Glaze still holds above ~85% protection under
+            these counter-attacks — but they are clear that this number may shift as
+            techniques evolve.
+          </p>
+          <p>
+            The honest framing: Glaze works today, for the models that exist today. Using
+            it raises the cost of style mimicry. It does not eliminate it forever.
+          </p>
+        </div>
+
+        <h2>Further reading</h2>
+        <div class="prose">
+          <ul>
+            <li>Shan, S. et al. <em>Glaze: Protecting Artists from Style Mimicry by Text-to-Image Models</em>. USENIX Security, 2023.</li>
+            <li>SAND Lab, University of Chicago — <a href="https://sandlab.cs.uchicago.edu" rel="noopener">sandlab.cs.uchicago.edu</a></li>
+            <li>Glaze download — <a href="https://glaze.cs.uchicago.edu" rel="noopener">glaze.cs.uchicago.edu</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:3rem;"><a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <span>Open Agency · a project for Responsible AI</span>
+        <span><a href="../index.html">Home</a> · <a href="c2pa.html">C2PA</a> · <a href="nightshade.html">Nightshade</a></span>
+      </div>
+      <div>
+        <span>Content CC-BY-SA 4.0 · Code MIT</span>
+        <a href="#">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Agency — Responsible AI asks for consent</title>
+  <meta name="description" content="A plain-English guide to AI, consent, and the tools that put creators back in control." />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FAF9F6" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Open Agency — A Layman's Guide to Digital Consent" />
+  <meta property="og:description" content="Responsible AI asks for consent. Here's how to ask back." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Fraunces for headlines; body uses system UI stack (no fetch) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Favicon: inline SVG dot -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23B4432E'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#top" class="logo" aria-label="Open Agency — home">Open Agency</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#problem">The Problem</a>
+        <a href="#india">India</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#voices">What People Think</a>
+        <a href="#contribute" class="btn">Contribute</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================================================
+         HERO
+         ================================================ -->
+    <section id="top" class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1>Responsible AI <em>asks</em> for consent.</h1>
+            <p class="sub">
+              You uploaded a photo, a song, a painting. Somewhere, a model is training on it
+              — and nobody asked you first.
+            </p>
+            <p class="prose" style="max-width:34rem;">
+              This site is a plain-English guide to what's happening to your data online,
+              who it hurts, and the tools you can actually use to push back.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn" href="#problem">See who's affected <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn ghost" href="#toolbox">Jump to the toolbox</a>
+            </div>
+          </div>
+
+          <figure class="hero-visual" aria-label="An illustrated portrait slowly dissolving into a grid of pixels — a visual metaphor for scraping.">
+            <!-- Portrait dissolving into pixel mask. Mask rects fade away as you scroll. -->
+            <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#d8c9ad"/>
+                  <stop offset="1" stop-color="#8a7456"/>
+                </linearGradient>
+                <mask id="portraitMask">
+                  <rect width="400" height="500" fill="white"/>
+                  <g id="dissolveMask">
+                    <!-- Pixel grid used to dissolve the right half of the portrait. -->
+                  </g>
+                </mask>
+              </defs>
+              <!-- background -->
+              <rect width="400" height="500" fill="url(#skyGrad)"/>
+              <!-- portrait under mask -->
+              <g mask="url(#portraitMask)">
+                <!-- shoulders -->
+                <path d="M0 500 C 80 380, 140 360, 200 360 C 260 360, 320 380, 400 500 Z" fill="#23201c"/>
+                <!-- neck -->
+                <rect x="172" y="300" width="56" height="70" fill="#e9c9a7"/>
+                <!-- head -->
+                <ellipse cx="200" cy="230" rx="100" ry="120" fill="#eccaa6"/>
+                <!-- hair -->
+                <path d="M108 210 C 110 100, 290 100, 292 210 C 298 180, 270 120, 200 112 C 130 120, 102 180, 108 210 Z" fill="#35261a"/>
+                <!-- eyes -->
+                <ellipse cx="164" cy="230" rx="8" ry="4" fill="#22190f"/>
+                <ellipse cx="236" cy="230" rx="8" ry="4" fill="#22190f"/>
+                <!-- brow highlights -->
+                <path d="M148 208 Q 164 198 180 208" stroke="#22190f" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M220 208 Q 236 198 252 208" stroke="#22190f" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- nose -->
+                <path d="M200 238 L 192 278 L 208 278 Z" fill="#d4ae88"/>
+                <!-- mouth -->
+                <path d="M178 304 Q 200 316 222 304" stroke="#823f30" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </g>
+
+              <!-- Scan line decor -->
+              <g stroke="#B4432E" stroke-width="0.5" opacity="0.25">
+                <line x1="0" y1="160" x2="400" y2="160"/>
+                <line x1="0" y1="280" x2="400" y2="280"/>
+                <line x1="0" y1="400" x2="400" y2="400"/>
+              </g>
+
+              <!-- Scraper crop rectangle -->
+              <g stroke="#B4432E" stroke-width="1.5" fill="none" stroke-dasharray="4 4" opacity="0.7">
+                <rect x="118" y="122" width="164" height="188"/>
+              </g>
+              <g font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#B4432E" opacity="0.85">
+                <text x="124" y="118">extract ▸ CLIP · caption · EXIF</text>
+              </g>
+            </svg>
+            <!-- Pixel grid used by JS to dissolve the portrait. We inject here so JS can iterate. -->
+            <!-- (rects are generated by inline script below to avoid hand-typing 200 of them) -->
+          </figure>
+        </div>
+
+        <div class="microstrip" aria-label="Open source note">
+          <span>Built as an open educational resource — a project for Responsible AI, IIT Delhi.</span>
+          <a href="https://github.com/SanketRt/Open-Agency" target="_blank" rel="noopener">Contribute on GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 1 — WHO'S AFFECTED
+         ================================================ -->
+    <section id="problem" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">Who's affected</p>
+        <h2>It's not only artists.<br/>It's everyone who ever put something online.</h2>
+        <p class="lead">
+          Generative AI is trained on the open web. That sounds abstract until you realise
+          <em>the open web</em> means your selfies, your mother's voice note, the sketch you
+          posted in eighth grade, the reel you filmed last Tuesday. Here are five ways that
+          plays out.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <p class="card-num">Card 01 · Ordinary users</p>
+            <h3>Your photos, their deepfakes.</h3>
+            <p>
+              Every public photo is a training sample. Face-swap apps, undressing tools, and
+              non-consensual deepfake porn all rely on models that learned from ordinary
+              selfies — most of which were never meant for that purpose. Once an image leaves
+              your phone, it can be reconstituted into something you never posed for.
+            </p>
+            <p class="example">e.g., reporting on deepfake harassment in Indian schools and colleges, 2023–24.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">Card 02 · Voters</p>
+            <h3>Audio and video you can't trust.</h3>
+            <p>
+              Cloned political voices and AI-generated rally footage have already circulated
+              in elections in India, the US, Slovakia, and Bangladesh. Detection tools lag
+              behind generation tools by months, sometimes years. The cost of making a
+              convincing fake dropped from a studio to a laptop and ten minutes.
+            </p>
+            <p class="example">e.g., AI-generated audio of political leaders across Indian state elections, 2024.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">Card 03 · Artists</p>
+            <h3>Style mimicry isn't flattery — it's replacement.</h3>
+            <p>
+              A diffusion model that has seen a few dozen of an illustrator's pieces can
+              generate new work in their style on demand, for free, in seconds. Commissions
+              dry up. Clients pick the $0 version. The artist's own search results get
+              buried under imitations. Class-action lawsuits are slow; by the time courts
+              rule, the career damage is done.
+            </p>
+            <p class="example">e.g., the Glaze user study — 1,156 artists, 88% want a protection tool.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">Card 04 · Creators</p>
+            <h3>AI translation and the missing original.</h3>
+            <p>
+              Platforms now auto-dub creators into languages they don't speak, matching lip
+              movements and voice timbre. Nuance, slang, and regional identity get
+              flattened. More importantly: the AI-modified version often gets more reach
+              than the original — so the original effectively disappears.
+            </p>
+            <p class="example">e.g., a Tamil creator's joke, re-dubbed into Hindi, becomes a different joke.</p>
+          </article>
+
+          <article class="card">
+            <p class="card-num">Card 05 · Everyone</p>
+            <h3>You can't read what you can't find.</h3>
+            <p>
+              Most platforms bury AI-training clauses inside 40-page Terms of Service that
+              the average person will never read — studies repeatedly show under 10% do.
+              <em>Opt out of AI training</em> is either missing, hidden three menus deep, or
+              only available to users in specific jurisdictions.
+            </p>
+            <p class="example">Consent, in practice, is manufactured by exhaustion.</p>
+          </article>
+        </div>
+
+        <blockquote style="margin-top: 5rem;">
+          Consent, in practice, is manufactured by exhaustion.
+          <cite>The pattern across every major platform's ToS, 2023–25</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 2 — INDIA IN FOCUS
+         ================================================ -->
+    <section id="india" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">India in focus</p>
+        <h2>India has 800&nbsp;million internet users<br/>and one of the world's weakest consent floors.</h2>
+        <p class="lead">
+          Most global AI-consent discourse is framed around GDPR and the EU AI Act.
+          Indian users rarely see themselves in it.
+        </p>
+
+        <div class="prose" style="max-width:44rem;">
+          <p>
+            India is one of the largest sources of training data on the planet — photos,
+            voices, languages, faces, handwritten scripts. It is also, for now, one of the
+            jurisdictions where AI companies face the least friction. The EU can fine a
+            company billions under the AI Act. A user in Berlin can demand their data be
+            deleted under GDPR. A user in Bengaluru, in most cases, cannot.
+          </p>
+        </div>
+
+        <h3 style="margin-top:2rem;">The regulatory gap</h3>
+        <div class="regtable-wrap">
+          <table class="regtable">
+            <thead>
+              <tr>
+                <th scope="col">Jurisdiction</th>
+                <th scope="col">Key law</th>
+                <th scope="col">What it gives users</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>European Union</td>
+                <td>GDPR (2018) + AI Act (2024)</td>
+                <td>Right to erasure, right to object to automated processing, fines up to 7% of global revenue.</td>
+              </tr>
+              <tr>
+                <td>California, USA</td>
+                <td>CCPA / CPRA</td>
+                <td>Right to know, delete, opt out of sale or sharing — including for AI training.</td>
+              </tr>
+              <tr class="highlight">
+                <td>India</td>
+                <td>DPDP Act, 2023</td>
+                <td>Consent-based framework on paper; rules and Data Protection Board still being operationalised. <strong>No AI-specific provisions.</strong></td>
+              </tr>
+              <tr>
+                <td>United Kingdom</td>
+                <td>Data Protection Act + emerging AI regulation</td>
+                <td>Similar to GDPR; still evolving.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:3rem;">Tested on India first</h3>
+        <p class="prose">
+          Several patterns recur in reporting on AI deployment in India:
+        </p>
+        <ul class="prose" style="padding-left:1.2rem; max-width:44rem;">
+          <li>Features launched in India <em>before</em> the EU or US, because regulatory review is faster and consent requirements looser.</li>
+          <li>Voice and facial datasets collected via free apps marketed heavily in Indian languages, later used to train models sold globally.</li>
+          <li>Low-wage data annotation and RLHF work subcontracted to Indian workers labelling violent or disturbing content without adequate psychological support — documented by <em>Time</em>, <em>The Verge</em>, and <em>Rest of World</em> over 2022–24.</li>
+        </ul>
+        <p class="prose">
+          The pattern isn't conspiracy — it's economic gravity. Where the regulatory cost of
+          a mistake is low and the labour cost of data work is low, companies go. India is
+          currently both.
+        </p>
+
+        <h3 style="margin-top:3rem;">What creators in India can do today</h3>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <h4>Know your DPDP rights.</h4>
+            <p>The Act gives you the right to consent, purpose limitation, and erasure. It is narrow, and it is still rolling out — but it is what you have.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Use the toolbox below.</h4>
+            <p>Glaze, Nightshade, and C2PA work regardless of jurisdiction. Laws can wait; your images can't.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Document exposure.</h4>
+            <p>If your work or likeness appears in a scraped dataset, there's a growing evidence base — e.g. haveibeentrained.com.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 3 — THE TOOLBOX
+         ================================================ -->
+    <section id="toolbox" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">The Toolbox</p>
+        <h2>You don't have to wait for a law.<br/>These three tools exist now.</h2>
+        <p class="lead">
+          None of them are silver bullets. Each addresses a different layer of the problem —
+          proving what something is, hiding what a model can learn from it, and poisoning
+          what a model tries to steal. Used together, they shift leverage back to the creator.
+        </p>
+
+        <div class="tool-cards">
+          <a class="tool-card" href="tools/c2pa.html">
+            <!-- Icon: seal / stamp -->
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="24" cy="20" r="11"/>
+              <circle cx="24" cy="20" r="6"/>
+              <path d="M18 29 L 15 44 L 24 39 L 33 44 L 30 29"/>
+            </svg>
+            <p class="tool-name">C2PA</p>
+            <p class="tagline">A tamper-evident receipt for every piece of media.</p>
+            <p>
+              An open standard — backed by Adobe, Microsoft, BBC, Nikon, Leica and ~300
+              others — that attaches a cryptographically signed manifest to your file.
+              It records who made it, when, with what tool, and whether AI was involved.
+            </p>
+            <span class="read-more">Deep dive <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="tool-card" href="tools/glaze.html">
+            <!-- Icon: cloak / shield -->
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M24 4 L 40 10 V 24 C 40 34, 32 42, 24 44 C 16 42, 8 34, 8 24 V 10 Z"/>
+              <path d="M16 22 Q 24 28, 32 22"/>
+              <path d="M16 28 Q 24 34, 32 28"/>
+            </svg>
+            <p class="tool-name">Glaze</p>
+            <p class="tagline">A cloak for your art style.</p>
+            <p>
+              From the University of Chicago's SAND Lab. Nearly-invisible perturbations
+              that change nothing for a human eye but make a diffusion model learn the
+              wrong style. Defensive. Over 93% effective in the authors' study of 1,156 artists.
+            </p>
+            <span class="read-more">Deep dive <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+
+          <a class="tool-card" href="tools/nightshade.html">
+            <!-- Icon: thorn / nightshade -->
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M24 6 C 18 12, 16 18, 20 24 C 14 24, 10 28, 10 34 C 18 34, 22 30, 24 24 C 26 30, 30 34, 38 34 C 38 28, 34 24, 28 24 C 32 18, 30 12, 24 6 Z"/>
+              <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+              <line x1="24" y1="34" x2="24" y2="42"/>
+            </svg>
+            <p class="tool-name">Nightshade</p>
+            <p class="tagline">If you scrape me, you poison your model.</p>
+            <p>
+              From the same lab — but on offence. It modifies an image so that, to a human,
+              it still looks like a dog — but to a model training on it, "dog" starts to
+              mean "cat." As few as 50–100 samples measurably corrupts a concept.
+            </p>
+            <span class="read-more">Deep dive <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </div>
+
+        <h3 style="margin-top:4rem;">Side-by-side</h3>
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th></th>
+                <th scope="col">C2PA</th>
+                <th scope="col">Glaze</th>
+                <th scope="col">Nightshade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>What it does</td>
+                <td>Labels content with signed provenance.</td>
+                <td>Hides your style from learning.</td>
+                <td>Poisons what a scraper learns.</td>
+              </tr>
+              <tr>
+                <td>Who it's for</td>
+                <td>Everyone.</td>
+                <td>Artists with a style at risk.</td>
+                <td>Artists willing to escalate.</td>
+              </tr>
+              <tr>
+                <td>Works if already scraped?</td>
+                <td>Partially (for future edits).</td>
+                <td>No.</td>
+                <td>No.</td>
+              </tr>
+              <tr>
+                <td>Requires cooperation?</td>
+                <td>Yes — AI companies must honour it.</td>
+                <td>No.</td>
+                <td>No.</td>
+              </tr>
+              <tr>
+                <td>Stance</td>
+                <td>Defensive / legal.</td>
+                <td>Defensive / technical.</td>
+                <td>Offensive / technical.</td>
+              </tr>
+              <tr>
+                <td>Cost to user</td>
+                <td>Free (Adobe CAI).</td>
+                <td>Free.</td>
+                <td>Free.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 4 — AGENCY SIMULATOR
+         ================================================ -->
+    <section id="simulator" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">The Agency Simulator</p>
+        <h2>Try it yourself.</h2>
+        <p class="lead">
+          Below is a side-by-side sandbox. On the left: a regular image, as a scraper sees
+          it — featureless, learnable, repeatable. On the right: the same image with C2PA
+          credentials attached and a Glaze-style perturbation applied. Watch what the
+          simulated scraper picks up in each case.
+        </p>
+
+        <div class="sim" role="region" aria-label="Interactive scraper vs. protected image demo">
+          <div class="sim-panels">
+            <div class="sim-panel raw">
+              <h3>Raw — as the scraper sees it</h3>
+              <div class="sim-canvas-wrap">
+                <canvas id="simRaw" aria-label="Unprotected sample image rendered on a canvas."></canvas>
+              </div>
+              <div class="sim-terminal" id="termRaw" aria-live="polite"></div>
+            </div>
+            <div class="sim-panel protected">
+              <h3>Protected — C2PA + Glaze overlay</h3>
+              <div class="sim-canvas-wrap">
+                <canvas id="simProtected" aria-label="Same image with adversarial cloak and C2PA badge applied."></canvas>
+              </div>
+              <div class="sim-terminal" id="termProtected" aria-live="polite"></div>
+            </div>
+          </div>
+          <div class="sim-controls">
+            <button id="toggleProtection" class="btn" aria-pressed="true">Turn protection OFF</button>
+            <label class="visually-hidden" for="simUpload">Upload your own image</label>
+            <input type="file" id="simUpload" accept="image/*" />
+            <button id="simReset" class="btn ghost" type="button">Reset sample</button>
+            <span class="sim-note" id="simCaption">Built-in sample — a stylised portrait.</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem; font-size:.875rem; color:var(--muted);">
+          Your image never leaves your browser. Everything above is processed locally via the Canvas API — no upload, no server.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 5 — WHAT PEOPLE THINK
+         ================================================ -->
+    <section id="voices" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">What people actually think</p>
+        <h2>We asked. The numbers say the floor<br/>is lower than the law assumes.</h2>
+        <p class="lead">
+          We surveyed <strong>[N]</strong> respondents on how they think about AI, consent,
+          and their data. The pattern is consistent: people are willing to share, but not
+          to be scraped. They are uncomfortable with what is already happening. And most
+          have never heard of the tools in the previous section.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">have read a Terms of Service in full before uploading content.</p>
+          </div>
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">know their images may be used to train AI models.</p>
+          </div>
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">would opt out of AI training if given a one-click option.</p>
+          </div>
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">support stronger consent laws in India specifically for AI training data.</p>
+          </div>
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">have heard of C2PA, Glaze, or Nightshade before visiting this site.</p>
+          </div>
+          <div class="stat">
+            <div class="num">__<span class="pct">%</span></div>
+            <p class="desc">have personally encountered — or know someone who has — a deepfake, voice-clone scam, or unauthorised AI use of their likeness.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:3rem;">In their own words</h3>
+        <div class="quotes">
+          <blockquote>
+            "I share everything on Instagram, but I never thought about where those photos go after."
+            <cite>Anonymous · 22 · Delhi</cite>
+          </blockquote>
+          <blockquote>
+            "If I had a button that said 'don't train on my art,' I would press it immediately."
+            <cite>Anonymous · 29 · Mumbai</cite>
+          </blockquote>
+          <blockquote>
+            "My aunt fell for an AI voice-clone scam last month. She thought my cousin was calling."
+            <cite>Anonymous · 35 · Hyderabad</cite>
+          </blockquote>
+        </div>
+        <p style="margin-top:1rem; font-size:.875rem; color:var(--muted); font-style:italic;">
+          Placeholder quotes — to be replaced with verbatim responses after the survey period closes.
+        </p>
+
+        <details class="methodology">
+          <summary>Methodology note</summary>
+          <p>
+            <strong>Sample size:</strong> [N] respondents, [date range].
+            <strong>Recruitment:</strong> [method — e.g. campus-wide student mailing list + snowball via social media].
+            <strong>Demographics:</strong> [age / location / profession breakdown].
+            <strong>Limitations:</strong> Convenience sample; skews toward urban, English-literate
+            internet users. Results are indicative, not representative of India's internet
+            population as a whole.
+          </p>
+          <p>
+            Full anonymised responses and the questionnaire are available in the repo
+            under <code>/survey/</code>. Contributors are welcome to replicate in other
+            regions and open a PR with comparable results.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================================================
+         SECTION 6 — CONTRIBUTE
+         ================================================ -->
+    <section id="contribute" class="section reveal">
+      <div class="wrap">
+        <p class="section-label">Get involved</p>
+        <h2>This is open source.<br/>Make it better.</h2>
+
+        <div class="contrib-cols">
+          <div class="contrib-col">
+            <h3><span class="num">01</span> Write.</h3>
+            <p>
+              Spot a missing tool? A better explanation? A regional case study? Open a PR
+              against <code>CONTENT.md</code>. We especially need non-US and non-EU context.
+            </p>
+          </div>
+          <div class="contrib-col">
+            <h3><span class="num">02</span> Translate.</h3>
+            <p>
+              We especially want Indic-language translations — Hindi, Tamil, Bengali,
+              Marathi, Kannada, Telugu first. Translations live in <code>/locales/</code>.
+            </p>
+          </div>
+          <div class="contrib-col">
+            <h3><span class="num">03</span> Code.</h3>
+            <p>
+              The Agency Simulator can grow. Good first issues are tagged
+              <code>good-first-issue</code> on GitHub.
+            </p>
+          </div>
+        </div>
+
+        <div class="contrib-cta">
+          <a class="btn" href="https://github.com/SanketRt/Open-Agency" target="_blank" rel="noopener" aria-label="Go to the GitHub repository">
+            Go to the repo <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="smallprint">
+            Content licensed CC-BY-SA 4.0. Code licensed MIT. Attribution, not permission, is the default.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <span>Open Agency · a project for COL864 · Supervised by Prof. Vijay Keswani</span>
+        <span>IIT Delhi</span>
+      </div>
+      <div>
+        <span>
+          <a href="https://github.com/SanketRt/Open-Agency" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+          <a href="https://github.com/SanketRt/Open-Agency/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a> ·
+          <a href="https://github.com/SanketRt/Open-Agency/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing guide</a> ·
+          <a href="https://github.com/SanketRt/Open-Agency" target="_blank" rel="noopener noreferrer">Site source</a>
+        </span>
+        <span>Content CC-BY-SA 4.0 · Code MIT</span>
+      </div>
+      <div>
+        <span>Last content update: <span id="auto-year">2026</span>. This is a living educational resource — accuracy may lag; PRs welcome.</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Generate the pixel grid for the hero dissolve mask (avoids typing 150 rects by hand) -->
+  <script>
+    (() => {
+      const mask = document.getElementById('dissolveMask');
+      if (!mask) return;
+      const cols = 16, rows = 20;
+      const cellW = 400 / cols, cellH = 500 / rows;
+      const svgNS = 'http://www.w3.org/2000/svg';
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const r = document.createElementNS(svgNS, 'rect');
+          // Only cover the right 60% so the face stays recognisable by default.
+          if (x < cols * 0.4) continue;
+          r.setAttribute('x', x * cellW);
+          r.setAttribute('y', y * cellH);
+          r.setAttribute('width', cellW);
+          r.setAttribute('height', cellH);
+          r.setAttribute('fill', 'black');
+          r.setAttribute('fill-opacity', '1');
+          mask.appendChild(r);
+        }
+      }
+    })();
+  </script>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/simulator.js" defer></script>
+</body>
+</html>

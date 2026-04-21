@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C2PA — A tamper-evident receipt for every piece of media · Open Agency</title>
+  <meta name="description" content="C2PA is an open standard for cryptographic content provenance. Here's what it does, what it doesn't, and how to use it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23B4432E'/%3E%3C/svg%3E" />
+</head>
+<body class="tool-page">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="../index.html" class="logo">Open Agency</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#problem">The Problem</a>
+        <a href="../index.html#india">India</a>
+        <a href="../index.html#toolbox">Toolbox</a>
+        <a href="../index.html#voices">What People Think</a>
+        <a href="../index.html#contribute" class="btn">Contribute</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a>
+
+        <div class="tool-hero-grid">
+          <div class="tool-hero">
+            <p class="section-label">Tool · 01 of 03</p>
+            <h1>C2PA Content Credentials</h1>
+            <p class="tagline">A tamper-evident receipt for every piece of media.</p>
+            <p class="sub">
+              An open standard — backed by Adobe, Microsoft, the BBC, Nikon, Leica and around
+              300 other members — that attaches a cryptographically signed manifest to a file.
+              It records who made it, when, with what tool, and whether AI was involved.
+            </p>
+          </div>
+
+          <dl class="meta">
+            <dt>Who it's for</dt>
+            <dd>Everyone.</dd>
+            <dt>Stance</dt>
+            <dd>Defensive / legal.</dd>
+            <dt>Cost</dt>
+            <dd>Free (Adobe Content Authenticity).</dd>
+            <dt>Requires cooperation?</dt>
+            <dd>Yes — AI companies must honour the <em>Do Not Train</em> flag.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-block: 3rem 4rem;">
+      <div class="wrap">
+
+        <h2>What it actually does</h2>
+        <div class="prose">
+          <p>
+            When you sign a file with Content Credentials, the tool bundles a small JSON-like
+            <strong>manifest</strong> into the file's metadata and signs it with a certificate.
+            The manifest can state things like: "Captured on a Leica M11 on 12 March 2025. Edited
+            in Photoshop. Generative Fill was not used. Do not train on this image."
+          </p>
+          <p>
+            If anyone later edits the file, the signature breaks — a verifier can tell. If someone
+            strips the manifest entirely, <em>soft bindings</em> (perceptual fingerprints and
+            invisible watermarks) can still link the file back to the original record. A journalist
+            can prove their photo hasn't been tampered with. An artist can declare, in a
+            standardised, machine-readable way, that they have not consented to AI training.
+          </p>
+        </div>
+
+        <div class="pros-cons">
+          <section class="pros">
+            <h4>What it does for you</h4>
+            <ul>
+              <li>Lets you mark an image <em>Do Not Train</em> in a standard, machine-readable way.</li>
+              <li>Lets viewers verify a news photo really came from the photographer who claims it.</li>
+              <li>Survives screenshots via soft bindings (watermarks and fingerprints).</li>
+              <li>Free to use through Adobe's Content Authenticity tool.</li>
+            </ul>
+          </section>
+          <section class="cons">
+            <h4>What it doesn't do</h4>
+            <ul>
+              <li>It doesn't <em>force</em> anyone to honour the <em>Do Not Train</em> flag. Adoption by AI companies is voluntary today — OpenAI, Microsoft, Adobe and a handful of others respect it; most scrapers don't.</li>
+              <li>It doesn't hide your content from scrapers. It just labels it.</li>
+              <li>A bad actor who controls the full pipeline can strip metadata; soft bindings mitigate but don't eliminate this.</li>
+            </ul>
+          </section>
+        </div>
+
+        <h2 id="how" style="margin-top:3rem;">How to use it today</h2>
+        <div class="prose">
+          <ol>
+            <li>
+              Download <a href="https://contentauthenticity.org" rel="noopener">Adobe Content Authenticity</a>
+              — it's free, and the public beta runs in a web browser plus as a Chrome extension.
+            </li>
+            <li>Sign in once with an Adobe ID (or any supported identity provider) so your credentials can be verified later.</li>
+            <li>Drag in a photo, artwork, or video. Fill in the fields you want to attach — creator name, social handles, AI usage disclosure, and the <em>Do Not Train</em> flag.</li>
+            <li>Export the signed file. Upload anywhere. Verifiers can inspect the credential at <a href="https://contentcredentials.org/verify" rel="noopener">contentcredentials.org/verify</a>.</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <strong>Honest framing</strong>
+          C2PA is a standard, not a law. It works the way seatbelts work — useful if everyone
+          installs them, useless if manufacturers skip the hardware. The moment to attach
+          credentials is <em>before</em> a file leaves your hands.
+        </div>
+
+        <h2>Limitations and criticisms</h2>
+        <div class="prose">
+          <p>
+            The C2PA ecosystem has received three main critiques from civil-society groups:
+            centralisation around a small trust list of certificate authorities; privacy concerns
+            when camera manufacturers embed signer identity by default; and the risk that
+            absence of a credential gets read as "this is fake," penalising people who can't
+            afford signing infrastructure.
+          </p>
+          <p>
+            The C2PA Technical Working Group's response — summarised in their 2025 FAQ — is
+            that Content Credentials are always opt-in, that the credential records well-formed
+            provenance rather than truth, and that the absence of a credential must never be
+            treated as proof of forgery. That's the claim on paper; downstream platforms
+            implement it with varying fidelity.
+          </p>
+        </div>
+
+        <h2>Further reading</h2>
+        <div class="prose">
+          <ul>
+            <li>C2PA Technical Specification 2.0 — <a href="https://c2pa.org/specifications/specifications/2.0/specs/C2PA_Specification.html" rel="noopener">c2pa.org/specifications</a></li>
+            <li>Content Credentials Explained (Sep 2025 FAQ) — available via <a href="https://contentcredentials.org" rel="noopener">contentcredentials.org</a></li>
+            <li>Adobe Content Authenticity (free tool) — <a href="https://contentauthenticity.org" rel="noopener">contentauthenticity.org</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:3rem;"><a class="back-link" href="../index.html#toolbox">← Back to the Toolbox</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <span>Open Agency · a project for Responsible AI</span>
+        <span><a href="../index.html">Home</a> · <a href="glaze.html">Glaze</a> · <a href="nightshade.html">Nightshade</a></span>
+      </div>
+      <div>
+        <span>Content CC-BY-SA 4.0 · Code MIT</span>
+        <a href="#">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
