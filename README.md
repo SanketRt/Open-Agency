@@ -22,18 +22,15 @@ If you can write HTML, you can contribute.
 ## Local development
 
 ```bash
-git clone <https://github.com/SanketRt/open-agency>
+git clone https://github.com/SanketRt/open-agency
 cd open-agency
-# That's it. Open index.html in your browser.
 ```
 
 For live-reload, any static server works:
 
 ```bash
-# Python
 python3 -m http.server 8080
 
-# Node
 npx serve .
 ```
 
