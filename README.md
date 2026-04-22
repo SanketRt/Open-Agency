@@ -6,7 +6,7 @@ An open educational resource explaining AI scraping, provenance (C2PA), and
 adversarial defences (Glaze, Nightshade) in plain English — so non-technical
 creators can understand and exercise their right to consent online.
 
-Built as a course project in Responsible AI. Live site: _(add GitHub Pages URL here)_
+Built as a course project in Responsible AI. Live site: _(https://sanketrt.github.io/Open-Agency)_
 
 ---
 
