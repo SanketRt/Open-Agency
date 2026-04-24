@@ -40,17 +40,17 @@ Then visit `http://localhost:8080`.
 
 ```
 .
-├── index.html                 Main single-page narrative
+├── index.html                 
 ├── tools/
-│   ├── c2pa.html              Deep dive: C2PA Content Credentials
-│   ├── glaze.html             Deep dive: Glaze (SAND Lab)
-│   └── nightshade.html        Deep dive: Nightshade (SAND Lab)
-├── survey/                    Raw survey data, methodology, results page
+│   ├── c2pa.html              
+│   ├── glaze.html             
+│   └── nightshade.html        
+├── survey/                    
 ├── assets/
-│   ├── css/main.css           All styles (one file — intentional)
+│   ├── css/main.css           
 │   ├── js/
-│   │   ├── main.js            Nav, hero animation, scroll reveals
-│   │   └── simulator.js       The Agency Simulator (client-side)
+│   │   ├── main.js            
+│   │   └── simulator.js       
 │   └── img/
 ├── CONTRIBUTING.md
 ├── LICENSE.txt
@@ -82,12 +82,11 @@ We **are not**:
 ## License
 
 - **Content:** [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- **Code:** [MIT](LICENSE.txt)
+- **Code:** [MIT](LICENSE)
 
 Attribution, not permission, is the default.
 
 ## Credits
 
 Project for _Special Topics in AI_ (COL864), _IIT Delhi_.
-Supervisor: _Prof. Vijay Keswani_.
 Primary sources and citations listed at the bottom of each page.
