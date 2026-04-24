@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open Agency — Responsible AI asks for consent</title>
+  <title>Open Agency</title>
   <meta name="description" content="A plain-English guide to AI, consent, and the tools that put creators back in control." />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#FAF9F6" />
@@ -34,7 +34,7 @@
         <a href="#india">India</a>
         <a href="#toolbox">Toolbox</a>
         <a href="#simulator">Simulator</a>
-        <a href="#voices">What People Think</a>
+        <a href="#voices">What Artists Think</a>
         <a href="#contribute" class="btn">Contribute</a>
       </nav>
     </div>
@@ -211,6 +211,34 @@
           Consent, in practice, is manufactured by exhaustion.
           <cite>The pattern across every major platform's ToS, 2023–25</cite>
         </blockquote>
+
+        <h3 style="margin-top:5rem;">The collateral damage: a public record that's closing itself off.</h3>
+        <p class="prose">
+          The pushback from publishers isn't aimed only at OpenAI or Anthropic. When a
+          newspaper updates its <code>robots.txt</code> to keep AI crawlers out, the same
+          rule frequently locks out the Internet Archive too — the public-memory service
+          that has preserved over a trillion web pages since 1996. By late 2024, more than
+          <strong>half of the world's top news sites</strong> were blocking at least one
+          major AI crawler; many also block <code>ia_archiver</code> by association.
+          Journalism and the public record used to share one infrastructure. AI-training
+          anxiety is pulling them apart.
+        </p>
+
+        <figure class="plate">
+          <img src="media/public_archive_vs_locked_door.svg"
+               alt="Split diagram. Left panel: a layered stack of archived pages dated across thirty years, captioned &quot;one trillion-plus pages preserved for thirty years&quot; — the public memory of the web. Right panel: a newspaper with redacted headlines behind a red padlock, captioned &quot;241 news sites blocking the crawler.&quot; A fractured dashed line divides the two panels." />
+          <figcaption>
+            Left: the Internet Archive's open stack, 1996 onward. Right: the paywall-and-padlock
+            web that grew in response to AI scraping. The fracture down the middle is new.
+          </figcaption>
+        </figure>
+
+        <p class="prose">
+          The bind is brutal: the same tools publishers reach for to keep AI models out
+          also keep librarians, researchers, and ordinary readers from preserving what
+          was published. The remedy we build for one problem is quietly dismantling the
+          piece of the web most of us assumed would always be there.
+        </p>
       </div>
     </section>
 
@@ -470,17 +498,17 @@
     </section>
 
     <!-- ================================================
-         SECTION 5 — WHAT PEOPLE THINK
+         SECTION 5 — WHAT ARTISTS THINK
          ================================================ -->
     <section id="voices" class="section reveal">
       <div class="wrap">
-        <p class="section-label">What people actually think</p>
-        <h2>The public is worried.<br/>Artists are already fighting.</h2>
+        <p class="section-label">What artists actually think</p>
+        <h2>The people closest to the problem<br/>aren't waiting for permission anymore.</h2>
         <p class="lead">
-          We ran a small survey of 21 mostly non-artist respondents. Separately, researchers
-          at UChicago surveyed 1,156 professional artists for the Glaze paper. Put the two
-          side by side and a pattern appears: what the general public is starting to fear,
-          the creative community is already living with — and already organising against.
+          Researchers at UChicago's SAND Lab surveyed 1,156 professional artists —
+          illustrators, concept artists, animators — for the Glaze paper (USENIX Security 2023).
+          It is, to date, the largest structured record of what working creators actually
+          feel about generative AI training on their work. The numbers are not ambivalent.
         </p>
 
         <div class="insights">
@@ -488,91 +516,83 @@
           <article class="insight">
             <div class="insight-num-pair">
               <div class="stat-block">
-                <span class="num-xl">67<span class="pct">%</span></span>
-                <span class="stat-source">general public</span>
+                <span class="num-xl">77<span class="pct">%</span></span>
+                <span class="stat-source">style already mimicked</span>
               </div>
-              <span class="vs" aria-hidden="true">vs.</span>
+              <span class="vs" aria-hidden="true">+</span>
               <div class="stat-block">
                 <span class="num-xl">24<span class="pct">%</span></span>
-                <span class="stat-source">professional artists</span>
+                <span class="stat-source">income already hit</span>
               </div>
             </div>
-            <h3>The future the public fears, artists are already in.</h3>
+            <h3>This isn't a forecast. It's already happened.</h3>
             <p>
-              Two-thirds of our respondents said they'd be most upset about their voice,
-              likeness, or private AI conversations being scraped. In the artist community,
-              the abstract fear has already turned into lost income: 24% of 1,156 surveyed
-              artists say AI mimicry has <em>already</em> affected their earnings, and 77%
-              confirmed that models successfully mimic their specific style. Artists are
-              the early warning system for everyone else.
+              77% of surveyed artists confirmed that generative models successfully mimic
+              their specific style — not a generic "fantasy illustration" look, but
+              something a regular client would recognise as <em>theirs</em>. A quarter (24%)
+              report that this mimicry has already cost them paid work. The loss isn't
+              hypothetical and isn't in the future tense.
             </p>
           </article>
 
           <article class="insight">
             <div class="insight-num-pair">
               <div class="stat-block">
-                <span class="num-xl">76<span class="pct">%</span></span>
-                <span class="stat-source">want an opt-out</span>
+                <span class="num-xl">88<span class="pct">%</span></span>
+                <span class="stat-source">want a protection tool</span>
               </div>
               <span class="vs" aria-hidden="true">→</span>
               <div class="stat-block">
                 <span class="num-xl">93<span class="pct">%</span></span>
-                <span class="stat-source">artists rate Glaze</span>
+                <span class="stat-source">rated Glaze successful</span>
               </div>
             </div>
-            <h3>The button people want already exists.</h3>
+            <h3>The demand is clear. So is the early verdict on the tool.</h3>
             <p>
-              76% of our respondents said a one-click opt-out is the single feature that
-              would make them feel most in control of their data. Meanwhile, 93% of 1,156
-              artists rated Glaze — a technical opt-out for images — as successful at
-              disrupting style mimicry. The gap isn't supply. It's awareness. Almost
-              nobody outside the art community knows these tools are already here.
+              88% of respondents said they wanted a dedicated protection tool against style
+              mimicry before one existed. After trying Glaze, 93% rated it successful at
+              disrupting that mimicry. The appetite for a technical opt-out isn't niche or
+              fringe — it's nearly the entire working profession, and the first credible
+              answer clears the bar.
             </p>
           </article>
 
           <article class="insight">
             <div class="insight-num-pair">
-              <div class="stat-block">
-                <span class="num-xl">52<span class="pct">%</span></span>
-                <span class="stat-source">say consent required</span>
-              </div>
-              <span class="vs" aria-hidden="true">→</span>
               <div class="stat-block">
                 <span class="num-xl">89<span class="pct">%</span></span>
-                <span class="stat-source">artists taking action</span>
+                <span class="stat-source">taking defensive action</span>
+              </div>
+              <span class="vs" aria-hidden="true">+</span>
+              <div class="stat-block">
+                <span class="num-xl">50<span class="pct">%</span></span>
+                <span class="stat-source">considering going dark</span>
               </div>
             </div>
-            <h3>The debate is still live. Artists stopped waiting for it.</h3>
+            <h3>When the argument can't arrive in time, self-defence becomes the argument.</h3>
             <p>
-              A majority of our respondents (52%) believe explicit permission should still be
-              required before AI trains on publicly posted content. That debate is still
-              unresolved. Artists have already moved past it: 89% have taken or plan to take
-              defensive action, and over half are considering removing their work from the
-              internet entirely. When the ethical argument can't arrive in time,
-              self-defence becomes the argument.
+              89% of artists have already taken, or plan to take, defensive measures:
+              watermarking, style-cloaking, locking portfolios, leaving platforms. Over
+              half are actively considering removing their work from the public internet
+              entirely — the creative-economy equivalent of pulling out of the public
+              square because the square no longer protects them.
             </p>
           </article>
 
           <article class="insight">
             <div class="insight-num-pair">
               <div class="stat-block">
-                <span class="num-xl">0<span class="pct">%</span></span>
-                <span class="stat-source">blame individuals</span>
-              </div>
-              <span class="vs" aria-hidden="true">vs.</span>
-              <div class="stat-block">
                 <span class="num-xl">51<span class="pct">%</span></span>
-                <span class="stat-source">artists ready to sue</span>
+                <span class="stat-source">willing to sue</span>
               </div>
             </div>
-            <h3>Nobody thinks this should be your job. It is anyway.</h3>
+            <h3>Litigation is no longer a fringe position.</h3>
             <p>
-              Not a single respondent in our survey said individual users should bear the
-              most responsibility for consent — 48% pointed to AI companies, 33% to
-              governments. Yet 51% of surveyed artists are willing to personally join
-              class-action lawsuits against AI companies. The group everyone agrees
-              should owe the work the least is doing it anyway. This site exists because,
-              while we wait for law and industry to catch up, it falls on us.
+              51% of surveyed artists said they would personally join a class-action
+              lawsuit against an AI company training on their work without consent. In a
+              profession historically reluctant to litigate — freelancers, small studios,
+              long careers built on client goodwill — a clean majority willing to go to
+              court is a structural shift, not a handful of outliers.
             </p>
           </article>
 
@@ -581,22 +601,17 @@
         <details class="methodology">
           <summary>Methodology note</summary>
           <p>
-            <strong>Our survey:</strong> 21 respondents via academic networks. 71% students
-            or academic researchers, 19% casual tech users, 10% tech professionals, 0%
-            professional artists. 76% use AI tools daily. Small and non-representative —
-            treat as directional signal from the AI-aware educated public.
+            <strong>Source:</strong> Shan et al., <em>Glaze: Protecting Artists from Style
+            Mimicry by Text-to-Image Models</em>, USENIX Security 2023. 1,156 professional
+            artists surveyed, recruited through artist community networks — predominantly
+            full-time (46%) or part-time / freelance (50%), across illustration, concept
+            art, animation, and related fields.
           </p>
           <p>
-            <strong>Glaze artist survey:</strong> 1,156 professional artists surveyed by
-            Shan et al. for the Glaze paper (USENIX Security 2023). Recruited through
-            artist community networks; predominantly full-time (46%) or part-time /
-            freelance (50%) across illustration, concept art, animation, and related
-            fields.
-          </p>
-          <p>
-            Full questionnaire and anonymised responses available under <code>/survey/</code>.
-            Original Glaze paper: Shan et al.,
-            <em>Glaze: Protecting Artists from Style Mimicry by Text-to-Image Models</em>.
+            The survey is not a random sample of all artists; it skews towards creators
+            already aware of AI-training concerns and engaged enough to respond. Read the
+            figures as the view from the affected, attentive core of the profession — the
+            people who will define what the rest eventually demand.
           </p>
         </details>
       </div>
@@ -650,7 +665,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div>
-        <span>Open Agency · a project for COL864 · Supervised by Prof. Vijay Keswani</span>
+        <span>Open Agency · a project for COL864</span>
         <span>IIT Delhi</span>
       </div>
       <div>
