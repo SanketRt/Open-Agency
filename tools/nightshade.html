@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nightshade — If you scrape me, you poison your model · Open Agency</title>
+  <title>Nightshade</title>
   <meta name="description" content="Nightshade is a prompt-specific poisoning attack that lets artists push back against unconsented scraping." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,7 +38,7 @@
             <h1>Nightshade</h1>
             <p class="tagline">If you scrape me, you poison your model.</p>
             <p class="sub">
-              Nightshade — from the same University of Chicago lab as Glaze — goes on
+              Nightshade, from the same University of Chicago lab as Glaze, goes on
               offence. It modifies an image so that, to a human, it still looks like (say)
               a dog. But to a model being trained on it, it teaches the model that
               <em>dog</em> means <em>cat</em>.
@@ -47,7 +47,7 @@
 
           <dl class="meta">
             <dt>Who it's for</dt>
-            <dd>Artists willing to escalate — to make unconsented scraping expensive, not just unrewarding.</dd>
+            <dd>Artists willing to escalate: to make unconsented scraping expensive, not just unrewarding.</dd>
             <dt>Stance</dt>
             <dd>Offensive / technical.</dd>
             <dt>Cost</dt>
@@ -72,7 +72,7 @@
             success with around 200.
           </p>
           <p>
-            The image you release still looks, to human eyes, like whatever it always was —
+            The image you release still looks, to human eyes, like whatever it always was:
             a dog, a hat, a painting of a meadow. But its latent representation has been
             steered so that the model, during training, updates in the wrong direction. After
             enough poisoned samples, prompts containing the targeted concept start returning
@@ -86,15 +86,15 @@
             <ul>
               <li>Raises the cost of scraping unconsented data. If a company can't trust its training set, it has to filter carefully (expensive) or license data honestly (the point).</li>
               <li>Survives real defences: high-loss filtering, frequency analysis, and basic poison-detection methods all fail to remove Nightshade samples reliably.</li>
-              <li>Transfers across models — poisoned samples generated against one feature extractor still degrade others.</li>
-              <li>Free and open — same SAND Lab infrastructure as Glaze.</li>
+              <li>Transfers across models: poisoned samples generated against one feature extractor still degrade others.</li>
+              <li>Free and open: same SAND Lab infrastructure as Glaze.</li>
             </ul>
           </section>
           <section class="cons">
             <h4>What it doesn't do</h4>
             <ul>
               <li>It won't take down a production model. It's a statistical nudge that gets stronger as more people use it.</li>
-              <li>It's ethically contested — see the callout below.</li>
+              <li>It's ethically contested: see the callout below.</li>
               <li>It requires commitment: a single artist glazing and nightshading changes little. Collective adoption is where the leverage lives.</li>
               <li>Once a concept has enough clean training data, poisoning it gets harder. Nightshade works best for an artist's own name and rare stylistic concepts.</li>
             </ul>
@@ -106,7 +106,7 @@
           <p>
             The Nightshade paper makes a quiet but important point: rare concepts are
             easier to poison than common ones. "Dog" has millions of training images and is
-            hard to meaningfully shift. "Greg Rutkowski" — a specific artist's name — has a
+            hard to meaningfully shift. "Greg Rutkowski", a specific artist's name, has a
             few hundred, and can be effectively corrupted with fewer than 100 poison samples.
             This means the tool's leverage falls exactly where the harm falls hardest: on
             specific artists whose names and styles become prompts.
@@ -114,10 +114,10 @@
         </div>
 
         <div class="callout">
-          <strong>Ethics — read this section carefully</strong>
+          <strong>Ethics: read this section carefully</strong>
           Nightshade is the most contested tool on this site. Some call it vandalism of
           someone else's model. The authors frame it as asymmetric leverage for creators
-          who have no other leverage — a civil-disobedience tool against scraping that
+          who have no other leverage: a civil-disobedience tool against scraping that
           already violates consent. You can hold either view. What you shouldn't do is
           reach for it without knowing which you hold.
         </div>
@@ -126,13 +126,13 @@
         <div class="prose">
           <ol>
             <li>
-              Download Nightshade from the <a href="https://nightshade.cs.uchicago.edu" rel="noopener">SAND Lab</a>.
+              Download Nightshade from the <a href="https://nightshade.cs.uchicago.edu" target="_blank" rel="noopener">SAND Lab</a>.
               The tool is separate from Glaze but shares infrastructure. A reasonably modern
               GPU speeds things up substantially.
             </li>
             <li>Open the app, add your image, and name the concept you want to poison (usually your own name, or a style you are known for).</li>
             <li>Choose a perturbation budget. The paper's defaults (LPIPS p = 0.07) balance stealth with effectiveness.</li>
-            <li>Export. Upload to public platforms where scrapers will find it. You can — and the authors recommend you do — combine Glaze and Nightshade on the same image.</li>
+            <li>Export. Upload to public platforms where scrapers will find it. You can, and the authors recommend you do, combine Glaze and Nightshade on the same image.</li>
           </ol>
         </div>
 
@@ -146,8 +146,8 @@
             the few forms of leverage available.
           </p>
           <p>
-            If the law catches up — if there is a clear, enforceable right to opt out of
-            AI training in India and elsewhere — the case for Nightshade weakens. That would
+            If the law catches up, if there is a clear, enforceable right to opt out of
+            AI training in India and elsewhere, the case for Nightshade weakens. That would
             be a good thing. In the meantime, the case for informed use remains.
           </p>
         </div>
@@ -156,8 +156,8 @@
         <div class="prose">
           <ul>
             <li>Shan, S. et al. <em>Nightshade: Prompt-Specific Poisoning Attacks on Text-to-Image Generative Models</em>. IEEE S&P, 2024.</li>
-            <li>SAND Lab, University of Chicago — <a href="https://sandlab.cs.uchicago.edu" rel="noopener">sandlab.cs.uchicago.edu</a></li>
-            <li>Nightshade download — <a href="https://nightshade.cs.uchicago.edu" rel="noopener">nightshade.cs.uchicago.edu</a></li>
+            <li>SAND Lab, University of Chicago, <a href="https://sandlab.cs.uchicago.edu" target="_blank" rel="noopener">sandlab.cs.uchicago.edu</a></li>
+            <li>Nightshade download, <a href="https://nightshade.cs.uchicago.edu" target="_blank" rel="noopener">nightshade.cs.uchicago.edu</a></li>
           </ul>
         </div>
 

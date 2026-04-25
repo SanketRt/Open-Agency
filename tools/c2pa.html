@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C2PA — A tamper-evident receipt for every piece of media · Open Agency</title>
+  <title>C2PA</title>
   <meta name="description" content="C2PA is an open standard for cryptographic content provenance. Here's what it does, what it doesn't, and how to use it." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,8 +38,8 @@
             <h1>C2PA Content Credentials</h1>
             <p class="tagline">A tamper-evident receipt for every piece of media.</p>
             <p class="sub">
-              An open standard — backed by Adobe, Microsoft, the BBC, Nikon, Leica and around
-              300 other members — that attaches a cryptographically signed manifest to a file.
+              An open standard, backed by Adobe, Microsoft, the BBC, Nikon, Leica and around
+              300 other members, that attaches a cryptographically signed manifest to a file.
               It records who made it, when, with what tool, and whether AI was involved.
             </p>
           </div>
@@ -52,7 +52,7 @@
             <dt>Cost</dt>
             <dd>Free (Adobe Content Authenticity).</dd>
             <dt>Requires cooperation?</dt>
-            <dd>Yes — AI companies must honour the <em>Do Not Train</em> flag.</dd>
+            <dd>Yes, AI companies must honour the <em>Do Not Train</em> flag.</dd>
           </dl>
         </div>
       </div>
@@ -70,7 +70,7 @@
             in Photoshop. Generative Fill was not used. Do not train on this image."
           </p>
           <p>
-            If anyone later edits the file, the signature breaks — a verifier can tell. If someone
+            If anyone later edits the file, the signature breaks: a verifier can tell. If someone
             strips the manifest entirely, <em>soft bindings</em> (perceptual fingerprints and
             invisible watermarks) can still link the file back to the original record. A journalist
             can prove their photo hasn't been tampered with. An artist can declare, in a
@@ -91,7 +91,7 @@
           <section class="cons">
             <h4>What it doesn't do</h4>
             <ul>
-              <li>It doesn't <em>force</em> anyone to honour the <em>Do Not Train</em> flag. Adoption by AI companies is voluntary today — OpenAI, Microsoft, Adobe and a handful of others respect it; most scrapers don't.</li>
+              <li>It doesn't <em>force</em> anyone to honour the <em>Do Not Train</em> flag. Adoption by AI companies is voluntary today: OpenAI, Microsoft, Adobe and a handful of others respect it; most scrapers don't.</li>
               <li>It doesn't hide your content from scrapers. It just labels it.</li>
               <li>A bad actor who controls the full pipeline can strip metadata; soft bindings mitigate but don't eliminate this.</li>
             </ul>
@@ -102,18 +102,18 @@
         <div class="prose">
           <ol>
             <li>
-              Download <a href="https://contentauthenticity.org" rel="noopener">Adobe Content Authenticity</a>
-              — it's free, and the public beta runs in a web browser plus as a Chrome extension.
+              Download <a href="https://contentauthenticity.org" target="_blank" rel="noopener">Adobe Content Authenticity</a>,
+              it's free, and the public beta runs in a web browser plus as a Chrome extension.
             </li>
             <li>Sign in once with an Adobe ID (or any supported identity provider) so your credentials can be verified later.</li>
-            <li>Drag in a photo, artwork, or video. Fill in the fields you want to attach — creator name, social handles, AI usage disclosure, and the <em>Do Not Train</em> flag.</li>
-            <li>Export the signed file. Upload anywhere. Verifiers can inspect the credential at <a href="https://contentcredentials.org/verify" rel="noopener">contentcredentials.org/verify</a>.</li>
+            <li>Drag in a photo, artwork, or video. Fill in the fields you want to attach: creator name, social handles, AI usage disclosure, and the <em>Do Not Train</em> flag.</li>
+            <li>Export the signed file. Upload anywhere. Verifiers can inspect the credential at <a href="https://contentcredentials.org/verify" target="_blank" rel="noopener">contentcredentials.org/verify</a>.</li>
           </ol>
         </div>
 
         <div class="callout">
           <strong>Honest framing</strong>
-          C2PA is a standard, not a law. It works the way seatbelts work — useful if everyone
+          C2PA is a standard, not a law. It works the way seatbelts work: useful if everyone
           installs them, useless if manufacturers skip the hardware. The moment to attach
           credentials is <em>before</em> a file leaves your hands.
         </div>
@@ -128,7 +128,7 @@
             afford signing infrastructure.
           </p>
           <p>
-            The C2PA Technical Working Group's response — summarised in their 2025 FAQ — is
+            The C2PA Technical Working Group's response, summarised in their 2025 FAQ, is
             that Content Credentials are always opt-in, that the credential records well-formed
             provenance rather than truth, and that the absence of a credential must never be
             treated as proof of forgery. That's the claim on paper; downstream platforms
@@ -139,9 +139,9 @@
         <h2>Further reading</h2>
         <div class="prose">
           <ul>
-            <li>C2PA Technical Specification 2.0 — <a href="https://c2pa.org/specifications/specifications/2.0/specs/C2PA_Specification.html" rel="noopener">c2pa.org/specifications</a></li>
-            <li>Content Credentials Explained (Sep 2025 FAQ) — available via <a href="https://contentcredentials.org" rel="noopener">contentcredentials.org</a></li>
-            <li>Adobe Content Authenticity (free tool) — <a href="https://contentauthenticity.org" rel="noopener">contentauthenticity.org</a></li>
+            <li>C2PA Technical Specification 2.0, <a href="https://c2pa.org/specifications/specifications/2.0/specs/C2PA_Specification.html" target="_blank" rel="noopener">c2pa.org/specifications</a></li>
+            <li>Content Credentials Explained (Sep 2025 FAQ), available via <a href="https://contentcredentials.org" target="_blank" rel="noopener">contentcredentials.org</a></li>
+            <li>Adobe Content Authenticity (free tool), <a href="https://contentauthenticity.org" target="_blank" rel="noopener">contentauthenticity.org</a></li>
           </ul>
         </div>
 

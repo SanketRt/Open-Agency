@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glaze — A cloak for your art style · Open Agency</title>
+  <title>Glaze</title>
   <meta name="description" content="Glaze is a tool from the SAND Lab at the University of Chicago that protects artists from style mimicry by text-to-image models." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +41,7 @@
               Glaze is a tool from the University of Chicago's SAND Lab that adds nearly
               invisible perturbations to an artwork. To you, the image looks essentially the
               same. To a diffusion model trying to learn your style, it looks like something
-              completely different — say, cubism or abstract expressionism.
+              completely different: say, cubism or abstract expressionism.
             </p>
           </div>
 
@@ -66,11 +66,11 @@
         <div class="prose">
           <p>
             When a diffusion model learns your style, it is learning a set of statistical
-            patterns in <em>feature space</em> — the colours you favour, the ways your brush
+            patterns in <em>feature space</em>: the colours you favour, the ways your brush
             moves, how you build shadow. Glaze does not try to fight this directly. It
             computes a tiny perturbation on top of your image that, to the model's feature
             extractor, shifts your work into the neighbourhood of a completely different
-            style — Van Gogh, Picasso, Norman Bluhm. The human eye barely notices. The model
+            style: Van Gogh, Picasso, Norman Bluhm. The human eye barely notices. The model
             learns the wrong lesson.
           </p>
           <p>
@@ -84,9 +84,9 @@
             <h4>What it does for you</h4>
             <ul>
               <li>In the authors' study, over <strong>93%</strong> of 1,156 surveyed artists rated Glaze as successful at disrupting style mimicry.</li>
-              <li>Around <strong>87%</strong> protection still holds when only 25% of an artist's portfolio is glazed — you don't have to re-cloak your entire back catalogue.</li>
-              <li>Robust to basic counter-attacks: JPEG compression, Gaussian denoising, upscaling — Glaze still holds above 85% protection.</li>
-              <li>Free and open — download, install, run locally. Your art never leaves your machine during cloaking.</li>
+              <li>Around <strong>87%</strong> protection still holds when only 25% of an artist's portfolio is glazed, so you don't have to re-cloak your entire back catalogue.</li>
+              <li>Robust to basic counter-attacks: JPEG compression, Gaussian denoising, upscaling, and Glaze still holds above 85% protection.</li>
+              <li>Free and open: download, install, run locally. Your art never leaves your machine during cloaking.</li>
             </ul>
           </section>
           <section class="cons">
@@ -104,19 +104,19 @@
         <div class="prose">
           <ol>
             <li>
-              Download Glaze from the <a href="https://glaze.cs.uchicago.edu" rel="noopener">SAND Lab at the University of Chicago</a>.
+              Download Glaze from the <a href="https://glaze.cs.uchicago.edu" target="_blank" rel="noopener">SAND Lab at the University of Chicago</a>.
               Windows and macOS builds are available; a GPU helps but isn't strictly required.
             </li>
             <li>Open the app and drag in your artwork.</li>
             <li>Choose a <em>perturbation budget</em>. The authors suggest starting at p=0.05 (subtle) and only raising to p=0.1 if you want stronger protection at the cost of visible grain.</li>
-            <li>Run the cloak. Export the glazed version. Upload <em>that</em> — not the original — to ArtStation, Instagram, your portfolio site.</li>
+            <li>Run the cloak. Export the glazed version. Upload <em>that</em>, not the original, to ArtStation, Instagram, your portfolio site.</li>
             <li>Keep the un-glazed master offline. If you need to print or license, use the clean version.</li>
           </ol>
         </div>
 
         <div class="callout">
           <strong>Style-space intuition</strong>
-          A model doesn't see "your style" — it sees a point in a high-dimensional feature
+          A model doesn't see "your style": it sees a point in a high-dimensional feature
           space. Glaze nudges that point, invisibly to you, into a different neighbourhood.
           When the model later looks for your style, it finds Van Gogh's.
         </div>
@@ -128,7 +128,7 @@
             published against Glaze: adding Gaussian noise, JPEG-compressing the image, and
             attempting to invert the cloak with learned methods like PEZ and AdverseCleaner.
             The SAND Lab's papers report that Glaze still holds above ~85% protection under
-            these counter-attacks — but they are clear that this number may shift as
+            these counter-attacks, but they are clear that this number may shift as
             techniques evolve.
           </p>
           <p>
@@ -141,8 +141,8 @@
         <div class="prose">
           <ul>
             <li>Shan, S. et al. <em>Glaze: Protecting Artists from Style Mimicry by Text-to-Image Models</em>. USENIX Security, 2023.</li>
-            <li>SAND Lab, University of Chicago — <a href="https://sandlab.cs.uchicago.edu" rel="noopener">sandlab.cs.uchicago.edu</a></li>
-            <li>Glaze download — <a href="https://glaze.cs.uchicago.edu" rel="noopener">glaze.cs.uchicago.edu</a></li>
+            <li>SAND Lab, University of Chicago, <a href="https://sandlab.cs.uchicago.edu" target="_blank" rel="noopener">sandlab.cs.uchicago.edu</a></li>
+            <li>Glaze download, <a href="https://glaze.cs.uchicago.edu" target="_blank" rel="noopener">glaze.cs.uchicago.edu</a></li>
           </ul>
         </div>
 
