@@ -6,31 +6,32 @@ An open educational resource explaining AI scraping, provenance (C2PA), and
 adversarial defences (Glaze, Nightshade) in plain English — so non-technical
 creators can understand and exercise their right to consent online.
 
-Built as a course project in Responsible AI. Live site: _(https://sanketrt.github.io/Open-Agency)_
+Built as a course project for *Responsible AI* (COL864), IIT Delhi.
+Live site: https://sanketrt.github.io/Open-Agency
 
 ---
 
 ## Tech stack
 
-- **HTML5 + CSS + vanilla JS.** No framework. No build step. No bundler.
-- **Self-hosted or system font + one Google Font** (Fraunces). System-UI stack for body.
-- **No tracking. No analytics. No third-party scripts** except the font CSS.
-- **Deployed on GitHub Pages.**
+- **HTML5 + CSS + vanilla JS.** No framework, no build step, no bundler.
+- **One Google Font** (Fraunces) for headlines; system-UI stack for body.
+- **No tracking, no analytics, no third-party scripts** beyond the font CSS.
+- **Deployed on GitHub Pages** via the workflow in `.github/`.
 
 If you can write HTML, you can contribute.
 
 ## Local development
 
 ```bash
-git clone https://github.com/SanketRt/open-agency
-cd open-agency
+git clone https://github.com/SanketRt/Open-Agency
+cd Open-Agency
 ```
 
-For live-reload, any static server works:
+Any static server works:
 
 ```bash
 python3 -m http.server 8080
-
+# or
 npx serve .
 ```
 
@@ -40,20 +41,19 @@ Then visit `http://localhost:8080`.
 
 ```
 .
-├── index.html                 
+├── index.html              # main page
 ├── tools/
-│   ├── c2pa.html              
-│   ├── glaze.html             
-│   └── nightshade.html        
-├── survey/                    
+│   ├── c2pa.html           # deep dive: provenance
+│   ├── glaze.html          # deep dive: defensive cloak
+│   └── nightshade.html     # deep dive: offensive poison
 ├── assets/
-│   ├── css/main.css           
-│   ├── js/
-│   │   ├── main.js            
-│   │   └── simulator.js       
-│   └── img/
+│   ├── css/main.css        # all styles, design tokens at :root
+│   └── js/
+│       ├── main.js         # nav, reveal animations, hero dissolve
+│       └── simulator.js    # the Agency Simulator (Canvas-only, local)
+├── media/                  # SVGs and other static media
 ├── CONTRIBUTING.md
-├── LICENSE.txt
+├── LICENSE
 └── README.md
 ```
 
@@ -69,7 +69,7 @@ Then visit `http://localhost:8080`.
 ## Scope
 
 We **are** a plain-English synthesis of existing work on AI, consent, and
-creator-side defences, grounded in the Indian context.
+creator-side defences, with one section grounded in the Indian regulatory context.
 
 We **are not**:
 
@@ -88,5 +88,5 @@ Attribution, not permission, is the default.
 
 ## Credits
 
-Project for _Special Topics in AI_ (COL864), _IIT Delhi_.
-Primary sources and citations listed at the bottom of each page.
+Project for *Responsible AI* (COL864), IIT Delhi.
+Primary sources and citations are listed in the Bibliography section of the site.
