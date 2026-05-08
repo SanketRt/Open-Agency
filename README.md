@@ -6,6 +6,10 @@ An open educational resource explaining AI scraping, provenance (C2PA), and
 adversarial defences (Glaze, Nightshade) in plain English — so non-technical
 creators can understand and exercise their right to consent online.
 
+A companion **technical handbook** ([assets/Handbook.pdf](assets/Handbook.pdf))
+covers the underlying mathematics — perturbation objectives, poisoning dynamics,
+and the cryptographic provenance chain — for readers who want the equations.
+
 Built as a course project for *Responsible AI* (COL864), IIT Delhi.
 Live site: https://sanketrt.github.io/Open-Agency
 
@@ -47,6 +51,7 @@ Then visit `http://localhost:8080`.
 │   ├── glaze.html          # deep dive: defensive cloak
 │   └── nightshade.html     # deep dive: offensive poison
 ├── assets/
+│   ├── Handbook.pdf        # technical companion (mathematics deep-dive)
 │   ├── css/main.css        # all styles, design tokens at :root
 │   └── js/
 │       ├── main.js         # nav, reveal animations, hero dissolve
